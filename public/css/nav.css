@@ -62,15 +62,15 @@ body {
 
 /* In your case, use your actual image paths */
 .slide:nth-child(1) {
-    background-image: url('/src/public/Images/img2.jpg');
+    background-image: url('/images/img2.jpg');
 }
 
 .slide:nth-child(2) {
-    background-image: url('/src/public/Images/img3.jpg');
+    background-image: url('/images/img3.jpg');
 }
 
 .slide:nth-child(3) {
-    background-image: url('/src/public/Images/img2.jpg');
+    background-image: url('/images/img2.jpg');
 }
 
 header {

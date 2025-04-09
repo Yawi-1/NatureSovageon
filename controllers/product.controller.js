@@ -62,6 +62,7 @@ const getAllProducts = async (req, res) => {
       message: "Products Fetched Successfully",
       success: true,
     });
+
   } catch (error) {
     res.status(500).json({ message: error.message, success: false });
   }
@@ -74,7 +75,7 @@ const getSingleProduct = async(req,res)=>{
         if(!product){
             return res.status(404).json({message:"Product Not Found",success:false});
         }
-         res.json({data:product,message:'Single Product Fetched.',success:true})
+        res.render('productDetail',{product})
     } catch (error) {
         res.status(500).json({ message: error.message, success: false });
     }

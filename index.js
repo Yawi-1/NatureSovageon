@@ -20,12 +20,9 @@ app.get('/', (req, res) => {
 })
 
 app.listen(port, () => {
-<<<<<<< HEAD
-  console.log(`Example app listening on port ${port}`)
-})
-=======
+
   console.log(`http://localhost:${port}`)
   dbConnection()
 
 })
->>>>>>> 08f4eedea601ac26c38b36305e812ebdbf757dc9
+

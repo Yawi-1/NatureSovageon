@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= product.title %> - Product Details</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .product-title {
+      font-size: 2rem;
+      margin-bottom: 10px;
+      color: #2c3e50;
+    }
+
+    .product-img {
+      width: 100%;
+      max-height: 400px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    .product-detail {
+      margin-bottom: 15px;
+      font-size: 1.1rem;
+    }
+
+    .label {
+      font-weight: bold;
+      color: #555;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 20px;
+      text-decoration: none;
+      color: #3498db;
+      font-weight: bold;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
+    }
+
+    @media screen and (max-width: 600px) {
+      .container {
+        margin: 20px;
+        padding: 15px;
+      }
+
+      .product-title {
+        font-size: 1.5rem;
+      }
+
+      .product-detail {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="product-title"><%= product.title %></h1>
+    <img src="<%= product.image %>" alt="<%= product.title %>" class="product-img" />
+    
+    <p class="product-detail"><span class="label">Description:</span> <%= product.description %></p>
+    <p class="product-detail"><span class="label">Category:</span> <%= product.category %></p>
+    
+    <% if (product.price) { %>
+      <p class="product-detail"><span class="label">Price:</span> ₹<%= product.price %></p>
+    <% } %>
+
+    <% if (product.stock) { %>
+      <p class="product-detail"><span class="label">Available Stock:</span> <%= product.stock %> units</p>
+    <% } %>
+
+    <a href="/" class="back-link">← Back to Products</a>
+  </div>
+</body>
+</html>
