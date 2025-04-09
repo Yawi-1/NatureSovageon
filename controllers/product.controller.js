@@ -6,13 +6,21 @@ const addProduct = async (req, res) => {
     const { title, description, category } = req.body;
     const file = req.file;
 
+    if(!title){
+      return res.status(400).json({message: "Title is required"})
+    }
+    if(!description){
+      return res.status(400).json({message: "Title is required"})
+    }
+    if(!category){
+      return res.status(400).json({message: "Description is required"})
+    }
     if (!file) {
       return res.json({ message: "Image is required", success: false });
     }
 
-    console.log(file)
-
     const imageUrl = await uploadOnCloudinary(file);
+    
     if (!imageUrl) {
       return res.status(500).json({ message: "Failed to upload image", success: false });
     }
