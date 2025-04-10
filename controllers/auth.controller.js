@@ -47,6 +47,7 @@ const signup = asyncHandler(async (req, res) => {
 });
 
 const login = asyncHandler(async (req, res, next) => {
+  console.log(req.boy)
   const { email, password } = req.body;
   if (!email || !password) {
     return res.status(400).json({ message: "All fields are required" });
@@ -61,15 +62,8 @@ const login = asyncHandler(async (req, res, next) => {
   const token = generateToken(user._id);
 
   res.cookie("token", token, cookieOptions);
-  res.status(200).json({
-    data: {
-      _id: user._id,
-      name: user.name,
-      email: user.email,
-    },
-    message: "User logged in successfully",
-    success: true,
-  });
+
+  res.redirect('/api/dashboard')
 });
 
 const logout = (req, res) => {

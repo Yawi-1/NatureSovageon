@@ -2,7 +2,7 @@ const spinner = document.getElementById('spinner');
 async function fetchProducts() {
   spinner.classList.remove('hidden');
   try {
-    const res = await fetch("http://localhost:3000/api/products"); 
+    const res = await fetch("/api/products"); 
     const data = await res.json();
     const { products } = data.data;
 
