@@ -14,29 +14,30 @@ body {
 }
 
 .container {
-  max-width: 1200px;
-  margin: 2rem auto;
-  padding: 2rem;
   background: white;
   border-radius: 1rem;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
-
+.menuBtn{
+  display: none;
+}
 .topbar {
   background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-  padding: 1.5rem 2rem;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  border-radius: 0.5rem;
-  margin-bottom: 2rem;
+  justify-content: space-between;
+  position: fixed;
+  top:0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
 }
 
 .form-container {
   background: #f8fafc;
   padding: 2rem;
   border-radius: 0.75rem;
-  margin-bottom: 3rem;
+  margin-top: 6rem;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
@@ -126,8 +127,23 @@ th {
   .topbar h1 {
     font-size: 1.25rem;
   }
+  .menuBtn{
+    display: block;
+  }
+  .logout-btn{
+    position: absolute;
+    top:10rem
+  }
+  .dash-h1{
+   font-size: 1px;
+   padding: 0px 0px;
+  }
 }
 
 .dash-h1{
   color: white;
+  padding: 0 3rem;
+}
+.logout-btn{
+  margin: 0 4rem;
 }

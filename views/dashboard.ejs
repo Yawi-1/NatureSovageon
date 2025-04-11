@@ -5,13 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Product Manager</title>
   <link rel="stylesheet" href="/css/dashboard.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
   <div class="container">
     <div class="topbar">
       <h1 class="dash-h1">Product Dashboard</h1>
-      <button class="logout-btn">Logout</button>
+      <button id="logout" class="logout-btn">Logout</button>
+      <button class="menuBtn">
+        <i class="fa fa-bars" style="font-size:24px"></i>
+      </button>
     </div>
 
     <div class="form-container">
@@ -40,10 +44,12 @@
           <thead>
             <tr>
               <th>#</th>
+              <th>Image</th>
               <th>Title</th>
               <th>Description</th>
               <th>Category</th>
-              <th>Image</th>
+              <th>Action</th>
+             
             </tr>
           </thead>
           <tbody id="productTableBody"></tbody>
