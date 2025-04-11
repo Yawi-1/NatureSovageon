@@ -4,8 +4,18 @@ document.addEventListener('DOMContentLoaded', () => {
   const loadingSpinner = document.querySelector('.loading-spinner');
   const errorMessage = document.querySelector('.error-message');
   const logoutBtn = document.getElementById('logout');
+  const menuButton = document.getElementById('menuBtn')
 
-
+  let isOpen = false;
+    menuButton.addEventListener('click',()=>{
+      if(isOpen){
+        logoutBtn.style.top = '-3rem';
+        isOpen = false;
+      }else{
+        logoutBtn.style.top = '4rem';
+        isOpen = true;
+      }
+    })
   // Fetch products on page load
   async function fetchProducts() {
     try {
@@ -41,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <td>${product.title}</td>
         <td>${product.description}</td>
         <td>${product.category}</td>
-        <td><button style='background-color:red'>Delete</button></td>
+        <td><button'> <i class="fa fa-trash-o" style="font-size:24px;color:red"></i></button></td>
       
       `;
       tableBody.appendChild(row);
