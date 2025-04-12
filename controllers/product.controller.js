@@ -44,20 +44,15 @@ const addProduct = async (req, res) => {
 
 const getAllProducts = async (req, res) => {
   try {
-    const page = parseInt(req.query.page) || 1;
-    const limit = parseInt(req.query.limit) || 10;
-    const skip = (page - 1) * limit;
 
-    const products = await Product.find().skip(skip).limit(limit);
+
+    const products = await Product.find()
     const total = await Product.countDocuments();
 
     res.status(200).json({
       data: {
         products,
-        page,
-        limit,
         total,
-        totalPages: Math.ceil(total / limit),
       },
       message: "Products Fetched Successfully",
       success: true,
@@ -81,5 +76,18 @@ const getSingleProduct = async(req,res)=>{
     }
 }
 
+const deleteProduct = async(req,res)=>{
+  try {
+      const {id} = req.params;
+      console.log(id)
+      const product = await Product.findByIdAndDelete(id);
+      if(!product){
+        return res.status(404).json({message:"Product Not Found",success:false});
+        }
+        res.status(200).json({message:"Product Deleted Successfully",success:true, product});
+  } catch (error) {
+    res.status(500).json({ message: error.message, success: false });
+  }
+}
 
-module.exports = { addProduct, getAllProducts,getSingleProduct };
+module.exports = { addProduct, getAllProducts,getSingleProduct,deleteProduct };
