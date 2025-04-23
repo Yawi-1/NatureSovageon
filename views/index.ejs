@@ -93,7 +93,7 @@
             font-weight: bold;
         }
         
-        /* Spice image section */
+ 
         .spice-image {
             position: absolute;
             right: 0;
@@ -101,9 +101,38 @@
             height: auto;
         }
     
-        
-  
-        
+        #scrollToTopBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 40px;
+    height: 40px;
+  font-size: 24px;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: none; 
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s, background-color 0.3s;
+}
+
+#scrollToTopBtn:hover {
+  transform: rotate(360deg); 
+}
+
+
+#scrollToTopBtn.show {
+  display: block;
+  animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
  
       
       
@@ -120,7 +149,9 @@
             <div class="slide"></div>
             <div class="slide"></div>
         </div>
-
+        <button id="scrollToTopBtn">
+            ⬆️
+        </button>
         <header>
             <div class="nav-links">
                 <a href="#">HOME</a>
@@ -255,7 +286,22 @@
   
 
  
-
+    <script>
+        const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+      
+        window.addEventListener("scroll", () => {
+          if (window.pageYOffset > 300) {
+            scrollToTopBtn.classList.add("show");
+          } else {
+            scrollToTopBtn.classList.remove("show");
+          }
+        });
+      
+        scrollToTopBtn.addEventListener("click", () => {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      </script>
+      
    <!-- Link JavaScript file -->
    <script src="/scripts/imagefu.js"></script> 
    <script src="/scripts/smallme.js"></script> 

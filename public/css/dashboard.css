@@ -6,7 +6,7 @@
 }
 
 body {
-  font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+  font-family: "Inter", "Segoe UI", system-ui, sans-serif;
   background-color: var(--background-color);
   margin: 0;
   padding: 0;
@@ -14,7 +14,7 @@ body {
 }
 
 .container {
-  padding-top: 4rem; 
+  padding-top: 4rem;
   background: white;
   border-radius: 1rem;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
@@ -30,7 +30,11 @@ body {
 }
 
 .topbar {
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -155,8 +159,8 @@ th {
   text-align: center;
   display: none;
 }
-.delete-btn{
-  background-color: white
+.delete-btn {
+  background-color: white;
 }
 
 @media (max-width: 768px) {
@@ -192,11 +196,15 @@ th {
     padding: 0.5rem;
     text-align: center;
   }
-  .product-image{
+  .product-image {
     width: 40px;
     height: 40px;
   }
-  .hide{
+  .hide {
     display: none;
   }
 }
+
+  .welcome-text {
+    text-align: center;
+  }
